@@ -12,12 +12,12 @@ export default class Homepage extends React.Component<RouteComponentProps, IStat
         this.state = { homes: [] }
     }
     public componentDidMount(): void {
-        axios.get(`http://localhost:8080/home`).then(data => {
+        axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}/home`).then(data => {
             this.setState({ homes: data.data })
         })
     }
     public deleteHome(id: number) {
-        axios.delete(`http://localhost:8080/home/${id}`).then(data => {
+        axios.delete(`${process.env.REACT_APP_BACKEND_BASE_URL}/home/${id}`).then(data => {
             const index = this.state.homes.findIndex(home => home.id === id);
             this.state.homes.splice(index, 1);
             this.props.history.push('/');
