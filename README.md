@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/76272b2f-e1af-4d5c-b203-ab2b7021f456/deploy-status)](https://app.netlify.com/sites/homehunt/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
