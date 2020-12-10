@@ -26,7 +26,7 @@ class EditHome extends React.Component<RouteComponentProps<any>, IFormState> {
     }
 
     public componentDidMount(): void {
-        axios.get(`http://localhost:8080/home/${this.state.id}`).then(data => {
+        axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}/home/${this.state.id}`).then(data => {
             this.setState({ home: data.data });
         })
     }
@@ -34,7 +34,7 @@ class EditHome extends React.Component<RouteComponentProps<any>, IFormState> {
     private processFormSubmission = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         this.setState({ loading: true });
-        axios.put(`http://localhost:8080/home/${this.state.id}`, this.state.values).then(data => {
+        axios.put(`${process.env.REACT_APP_BACKEND_BASE_URL}/home/${this.state.id}`, this.state.values).then(data => {
             this.setState({ submitSuccess: true, loading: false })
             setTimeout(() => {
                 this.props.history.push('/');
