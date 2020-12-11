@@ -39,6 +39,7 @@ export default class Homepage extends React.Component<RouteComponentProps, IStat
                             <thead className="thead-light">
                                 <tr>
                                     <th scope="col">URL</th>
+                                    <th scope="col">Rent in £ (pcm)</th>
                                     <th scope="col">Street Address</th>
                                     <th scope="col">Bedrooms</th>
                                     <th scope="col">Bathrooms</th>
@@ -54,6 +55,7 @@ export default class Homepage extends React.Component<RouteComponentProps, IStat
                                 {homes && homes.map(home =>
                                     <tr key={home.id}>
                                         <td>{home.url}</td>
+                                        <td>{home.rent}</td>
                                         <td>{home.streetAddress}</td>
                                         <td>{home.numBedrooms}</td>
                                         <td>{home.numBathrooms}</td>
