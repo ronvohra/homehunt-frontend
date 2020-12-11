@@ -4,6 +4,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 export interface IValues {
     url: string,
+    rent: number,
     streetAddress: string,
     numBedrooms: number,
     numBathrooms: number,
@@ -25,6 +26,7 @@ class Create extends React.Component<RouteComponentProps, IFormState> {
         super(props);
         this.state = {
             url: '',
+            rent: '',
             streetAddress: '',
             numBedrooms: '',
             numBathrooms: '',
@@ -44,6 +46,7 @@ class Create extends React.Component<RouteComponentProps, IFormState> {
         this.setState({ loading: true });
         const formData = {
             url: this.state.url,
+            rent: this.state.rent,
             streetAddress: this.state.streetAddress,
             numBedrooms: this.state.numBedrooms,
             numBathrooms: this.state.numBathrooms,
@@ -90,16 +93,20 @@ class Create extends React.Component<RouteComponentProps, IFormState> {
                             <input type="text" id="url" onChange={(e) => this.handleInputChanges(e)} name="url" className="form-control" placeholder="Enter Zoopla URL for home" />
                         </div>
                         <div className="form-group col-md-12">
+                            <label htmlFor="rent"> Rent in £ (pcm) </label>
+                            <input type="number" min="0" max="9999" step="1" id="rent" onChange={(e) => this.handleInputChanges(e)} name="rent" className="form-control" placeholder="Enter home rent in £ (pcm)" />
+                        </div>
+                        <div className="form-group col-md-12">
                             <label htmlFor="streetAddress"> Street Address </label>
                             <input type="text" id="streetAddress" onChange={(e) => this.handleInputChanges(e)} name="streetAddress" className="form-control" placeholder="Enter home's street address" />
                         </div>
                         <div className="form-group col-md-12">
                             <label htmlFor="numBedrooms"> Number of bedrooms </label>
-                            <input type="number" min="0" max="99" step="1" id="numBedrooms" onChange={(e) => this.handleInputChanges(e)} name="numBedrooms" className="form-control" placeholder="Enter number of bedrooms in home" />
+                            <input type="number" min="0" max="9" step="1" id="numBedrooms" onChange={(e) => this.handleInputChanges(e)} name="numBedrooms" className="form-control" placeholder="Enter number of bedrooms in home" />
                         </div>
                         <div className="form-group col-md-12">
                             <label htmlFor="numBathrooms"> Number of bathrooms </label>
-                            <input type="number" min="0" max="99" step="1" id="numBathrooms" onChange={(e) => this.handleInputChanges(e)} name="numBathrooms" className="form-control" placeholder="Enter number of bathrooms in home" />
+                            <input type="number" min="0" max="9" step="1" id="numBathrooms" onChange={(e) => this.handleInputChanges(e)} name="numBathrooms" className="form-control" placeholder="Enter number of bathrooms in home" />
                         </div>
                         <div className="form-group col-md-12">
                             <label htmlFor="nearestStation"> Nearest station </label>

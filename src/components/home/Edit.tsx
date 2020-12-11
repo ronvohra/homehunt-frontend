@@ -72,6 +72,10 @@ class EditHome extends React.Component<RouteComponentProps<any>, IFormState> {
                                         <input type="text" id="url" defaultValue={this.state.home.url} onChange={(e) => this.handleInputChanges(e)} name="url" className="form-control" placeholder="Enter Zoopla URL for home" />
                                     </div>
                                     <div className="form-group col-md-12">
+                                        <label htmlFor="rent"> Rent in £ (pcm) </label>
+                                        <input type="number" min="0" max="9999" step="1" id="rent" defaultValue={this.state.home.rent} onChange={(e) => this.handleInputChanges(e)} name="rent" className="form-control" placeholder="Enter rent in £ (pcm)" />
+                                    </div>
+                                    <div className="form-group col-md-12">
                                         <label htmlFor="streetAddress"> Street Address </label>
                                         <input type="text" id="streetAddress" defaultValue={this.state.home.streetAddress} onChange={(e) => this.handleInputChanges(e)} name="streetAddress" className="form-control" placeholder="Enter home's street address" />
                                     </div>
